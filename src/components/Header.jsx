@@ -1,4 +1,5 @@
-function Header({ onDashboardClick, onAboutClick }) {
+function Header({ onDashboardClick, onAboutClick }) 
+{
   return (
     <header>
       <h1>StudyBoard</h1>

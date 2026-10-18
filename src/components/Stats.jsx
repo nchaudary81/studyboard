@@ -1,5 +1,5 @@
-
-function Stats() {
+function Stats() 
+{
   return (
     <section className="stats">
       <div>

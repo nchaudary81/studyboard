@@ -1,10 +1,12 @@
 import { useState } from 'react'
 
-function AddTaskForm({ onAddTask }) {
+function AddTaskForm({ onAddTask }) 
+{
   const [title, setTitle] = useState('')
   const [subject, setSubject] = useState('')
 
-  function handleSubmit(event) {
+  function handleSubmit(event) 
+  {
     event.preventDefault()
 
     if (title.trim() === '' || subject.trim() === '') {

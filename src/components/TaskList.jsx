@@ -1,14 +1,31 @@
 import { useState } from 'react'
 import AddTaskForm from './AddTaskForm'
 
-function TaskList() {
+function TaskList() 
+{
   const [tasks, setTasks] = useState([
-    { id: 1, title: 'Finish programming homework', subject: 'Computer Science', completed: false },
-    { id: 2, title: 'Study for database exam', subject: 'Database Systems', completed: true },
-    { id: 3, title: 'Complete project proposal', subject: 'Internet Programming', completed: false }
+    {
+      id: 1,
+      title: 'Finish programming homework',
+      subject: 'Computer Science',
+      completed: false
+    },
+    {
+      id: 2,
+      title: 'Study for database exam',
+      subject: 'Database Systems',
+      completed: true
+    },
+    {
+      id: 3,
+      title: 'Complete project proposal',
+      subject: 'Internet Programming',
+      completed: false
+    }
   ])
 
-  function toggleTask(id) {
+  function toggleTask(id) 
+  {
     setTasks(
       tasks.map((task) =>
         task.id === id
@@ -18,7 +35,8 @@ function TaskList() {
     )
   }
 
-  function addTask(title, subject) {
+  function addTask(title, subject) 
+  {
     const newTask = {
       id: Date.now(),
       title: title,
@@ -30,23 +48,27 @@ function TaskList() {
   }
 
   return (
-    <section className="task-list">
-      <AddTaskForm onAddTask={addTask} />
+    <div className="task-section">
+      <div className="task-form-column">
+        <AddTaskForm onAddTask={addTask} />
+      </div>
 
-      <h2>My Tasks</h2>
+      <section className="task-list">
+        <h2>My Tasks</h2>
 
-      {tasks.map((task) => (
-        <div className="task-card" key={task.id}>
-          <h3>{task.title}</h3>
-          <p>{task.subject}</p>
-          <p>{task.completed ? 'Completed' : 'In Progress'}</p>
+        {tasks.map((task) => (
+          <div className="task-card" key={task.id}>
+            <h3>{task.title}</h3>
+            <p>{task.subject}</p>
+            <p>{task.completed ? 'Completed' : 'In Progress'}</p>
 
-          <button onClick={() => toggleTask(task.id)}>
-            {task.completed ? 'Mark In Progress' : 'Mark Completed'}
-          </button>
-        </div>
-      ))}
-    </section>
+            <button onClick={() => toggleTask(task.id)}>
+              {task.completed ? 'Mark In Progress' : 'Mark Completed'}
+            </button>
+          </div>
+        ))}
+      </section>
+    </div>
   )
 }
 

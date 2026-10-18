@@ -5,7 +5,8 @@ import Stats from './components/Stats'
 import TaskList from './components/TaskList'
 import About from './components/About'
 
-function App() {
+function App() 
+{
   const [currentView, setCurrentView] = useState('dashboard')
 
   return (
@@ -20,8 +21,12 @@ function App() {
           <>
             <h2>Welcome to your dashboard!</h2>
             <p>Keep track of your assignments and study goals.</p>
+
             <Stats />
-            <TaskList />
+
+            <div className="dashboard-layout">
+              <TaskList />
+            </div>
           </>
         ) : (
           <About />
