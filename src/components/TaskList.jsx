@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import AddTaskForm from './AddTaskForm'
 
 function TaskList() {
   const [tasks, setTasks] = useState([
@@ -17,8 +18,21 @@ function TaskList() {
     )
   }
 
+  function addTask(title, subject) {
+    const newTask = {
+      id: Date.now(),
+      title: title,
+      subject: subject,
+      completed: false
+    }
+
+    setTasks([...tasks, newTask])
+  }
+
   return (
     <section className="task-list">
+      <AddTaskForm onAddTask={addTask} />
+
       <h2>My Tasks</h2>
 
       {tasks.map((task) => (

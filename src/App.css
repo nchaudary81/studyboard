@@ -85,3 +85,25 @@ footer {
 .task-card p {
   margin-bottom: 5px;
 }
+
+.add-task-form {
+  background: white;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-task-form input {
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.add-task-form button {
+  margin-top: 8px;
+  align-self: flex-start;
+}
