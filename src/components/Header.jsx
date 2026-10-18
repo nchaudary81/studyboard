@@ -1,11 +1,11 @@
-
-function Header() {
+function Header({ onDashboardClick, onAboutClick }) {
   return (
     <header>
       <h1>StudyBoard</h1>
+
       <nav>
-        <button>Dashboard</button>
-        <button>About</button>
+        <button onClick={onDashboardClick}>Dashboard</button>
+        <button onClick={onAboutClick}>About</button>
       </nav>
     </header>
   )
