@@ -1,16 +1,11 @@
 
 import './App.css'
+import Header from './components/Header'
 
 function App() {
   return (
     <div className="app">
-      <header>
-        <h1>StudyBoard</h1>
-        <nav>
-          <button>Dashboard</button>
-          <button>About</button>
-        </nav>
-      </header>
+      <Header />
 
       <main>
         <h2>Welcome to your dashboard!</h2>
