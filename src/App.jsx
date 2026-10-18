@@ -2,6 +2,7 @@
 import './App.css'
 import Header from './components/Header'
 import Stats from './components/Stats'
+import TaskList from './components/TaskList'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <p>Keep track of your assignments and study goals.</p>
 
         <Stats />
+        <TaskList />
       </main>
 
       <footer>
