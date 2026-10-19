@@ -8,12 +8,36 @@ import About from './components/About'
 function App() 
 {
   const [currentView, setCurrentView] = useState('dashboard')
+  const [darkMode, setDarkMode] = useState(false)
+
+  const [tasks, setTasks] = useState([
+    {
+      id: 1,
+      title: 'Finish programming homework',
+      subject: 'Computer Science',
+      completed: false
+    },
+    {
+      id: 2,
+      title: 'Study for database exam',
+      subject: 'Database Systems',
+      completed: true
+    },
+    {
+      id: 3,
+      title: 'Complete project proposal',
+      subject: 'Database Systems',
+      completed: false
+    }
+  ])
 
   return (
-    <div className="app">
+    <div className={darkMode ? 'app dark-mode' : 'app'}>
       <Header
         onDashboardClick={() => setCurrentView('dashboard')}
         onAboutClick={() => setCurrentView('about')}
+        darkMode={darkMode}
+        onToggleDarkMode={() => setDarkMode(!darkMode)}
       />
 
       <main>
@@ -22,11 +46,12 @@ function App()
             <h2>Welcome to your dashboard!</h2>
             <p>Keep track of your assignments and study goals.</p>
 
-            <Stats />
+            <Stats tasks={tasks} />
 
-            <div className="dashboard-layout">
-              <TaskList />
-            </div>
+            <TaskList
+              tasks={tasks}
+              setTasks={setTasks}
+            />
           </>
         ) : (
           <About />

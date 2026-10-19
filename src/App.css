@@ -203,3 +203,50 @@ footer
     grid-template-columns: 1fr;
   }
 }
+
+.app 
+{
+  transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode 
+{
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+.dark-mode main h2 
+{
+  color: #e2e8f0;
+}
+
+.dark-mode .stats > div,
+.dark-mode .task-card,
+.dark-mode .add-task-form,
+.dark-mode .about 
+{
+  background: #1e293b;
+  color: #e2e8f0;
+}
+
+.dark-mode .stats h3 
+{
+  color: #93c5fd;
+}
+
+.dark-mode .add-task-form input 
+{
+  background: #334155;
+  color: white;
+  border-color: #475569;
+}
+
+.dark-mode .add-task-form input::placeholder 
+{
+  color: #cbd5e1;
+}
+
+.dark-mode footer 
+{
+  color: #cbd5e1;
+}

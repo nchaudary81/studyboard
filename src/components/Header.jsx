@@ -1,4 +1,9 @@
-function Header({ onDashboardClick, onAboutClick }) 
+function Header({
+  onDashboardClick,
+  onAboutClick,
+  darkMode,
+  onToggleDarkMode
+}) 
 {
   return (
     <header>
@@ -7,6 +12,9 @@ function Header({ onDashboardClick, onAboutClick })
       <nav>
         <button onClick={onDashboardClick}>Dashboard</button>
         <button onClick={onAboutClick}>About</button>
+        <button onClick={onToggleDarkMode}>
+          {darkMode ? 'Light Mode' : 'Dark Mode'}
+        </button>
       </nav>
     </header>
   )
